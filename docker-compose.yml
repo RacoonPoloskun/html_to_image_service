@@ -1,0 +1,18 @@
+services:
+  html-to-image-service:
+    container_name: html-to-image-service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/app/
+    ports:
+      - "3780:80"
+    restart: unless-stopped
+    command: 'sh /usr/src/app/entrypoint.sh'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

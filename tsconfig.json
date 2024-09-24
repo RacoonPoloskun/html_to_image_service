@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "experimentalDecorators": true,
+    /* Enable experimental support for TC39 stage 2 draft decorators. */
+    "emitDecoratorMetadata": true,
+    /* Emit design-type metadata for decorated declarations in source files. */
+    "module": "commonjs",
+    /* Specify what module code is generated. */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    /* Ensure that casing is correct in imports. */
+    "strict": true,
+    /* Enable all strict type-checking options. */
+    "noUnusedLocals": true,
+    /* Enable error reporting when local variables aren't read. */
+    "noUnusedParameters": true,
+    /* Raise an error when a function parameter isn't read. */
+    "skipLibCheck": true
+    /* Skip type checking all .d.ts files. */
+  }
+}
