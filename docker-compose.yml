@@ -1,5 +1,8 @@
+version: '3.8'
+
 services:
   html-to-image-service:
+    platform: linux/amd64
     container_name: html-to-image-service
     build:
       context: ./

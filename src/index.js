@@ -13,6 +13,7 @@ const app = (0, express_1.default)();
 app.use((0, helmet_1.default)());
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
+app.use(express_1.default.text({ type: 'text/html' }));
 app.use('/api/v1/toImage', toImage_router_1.toImageRouter);
 app.use('/healthz', healthz_router_1.healthzRouter);
 app.listen(PORT, () => {

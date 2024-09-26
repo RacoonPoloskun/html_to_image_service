@@ -17,8 +17,6 @@ curl --location 'http://localhost:3780/healthz'
 #### Convert HTML to Image
 ```shell
 curl --location 'http://localhost:3780/api/v1/toImage' \
---header 'Content-Type: application/json' \
---data '{
-    "html": "<h1>Hello world!</h1>"
-}'
+--header 'Content-Type: text/html' \
+--data '<h1>Hello world!</h1>'
 ```

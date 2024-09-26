@@ -10,7 +10,7 @@ const app = express()
 
 app.use(helmet())
 app.use(cors())
-app.use(express.json())
+app.use(express.text({ type: 'text/html' }));
 
 app.use('/api/v1/toImage', toImageRouter)
 app.use('/healthz', healthzRouter)

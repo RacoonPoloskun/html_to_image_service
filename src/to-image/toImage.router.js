@@ -17,16 +17,22 @@ const express_1 = __importDefault(require("express"));
 const node_html_to_image_1 = __importDefault(require("node-html-to-image"));
 exports.toImageRouter = express_1.default.Router();
 exports.toImageRouter.post('/', (request, response) => __awaiter(void 0, void 0, void 0, function* () {
-    const html = request.body.html;
-    yield (0, node_html_to_image_1.default)({
-        puppeteerArgs: {
-            args: ['--no-sandbox'],
-        },
-        html: html
-    }).then(function (img) {
-        response.writeHead(200, { 'Content-Type': 'image/png' });
-        response.end(img, 'binary');
-    }).catch((e) => {
-        console.log(e);
-    });
+    const html = request.body;
+    console.log(html);
+    try {
+        yield (0, node_html_to_image_1.default)({
+            puppeteerArgs: {
+                args: ['--no-sandbox', '--disable-setuid-sandbox'],
+            },
+            html: html
+        }).then(function (img) {
+            response.writeHead(200, { 'Content-Type': 'image/png' });
+            response.end(img, 'binary');
+        }).catch((e) => {
+            console.log(e);
+        });
+    }
+    catch (e) {
+        response.status(500).send(e);
+    }
 }));
